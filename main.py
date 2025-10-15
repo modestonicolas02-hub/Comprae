@@ -25,7 +25,7 @@ from routes.public_routes import router as public_router
 from util.seed_data import inicializar_dados
 
 # Criar aplicação FastAPI
-app = FastAPI(title="DefaultWebApp - Boilerplate", version="1.0.0")
+app = FastAPI(title=APP_NAME, version=VERSION)
 
 # Configurar SessionMiddleware
 app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)
@@ -86,7 +86,7 @@ async def health_check():
 
 if __name__ == "__main__":
     logger.info("=" * 60)
-    logger.info("Iniciando DefaultWebApp - Boilerplate FastAPI")
+    logger.info(f"Iniciando {APP_NAME} v{VERSION}")
     logger.info("=" * 60)
 
     logger.info(f"Servidor rodando em http://{HOST}:{PORT}")
